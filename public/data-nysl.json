@@ -1,0 +1,140 @@
+{
+    "Games": [
+        {
+            "team1": "U1",
+            "team2": "U4",
+            "day": 1,
+            "mounth": 9,
+            "time": "9:30 am",
+            "location": "AJ Katzenmaier"
+        },
+        {
+            "team1": "U3",
+            "team2": "U2",
+            "day": 1,
+            "mounth": 9,
+            "time": "1:00 pm",
+            "location": "Greenbay"
+        },
+        {
+            "team1": "U5",
+            "team2": "U6",
+            "day": 8,
+            "mounth": 9,
+            "time": "9:30 am",
+            "location": "Howard A Yeager"
+        },
+        {
+            "team1": "U6",
+            "team2": "U1",
+            "day": 8,
+            "mounth": 9,
+            "time": "1:00 pm",
+            "location": "Marjorie P Hart"
+        },
+        {
+            "team1": "U2",
+            "team2": "U4",
+            "day": 15,
+            "mounth": 9,
+            "time": "9:30 am",
+            "location": "North"
+        },
+        {
+            "team1": "U3",
+            "team2": "U5",
+            "day": 15,
+            "mounth": 9,
+            "time": "1:00 pm",
+            "location": "AJ Katzenmaier"
+        },
+        {
+            "team1": "U1",
+            "team2": "U3",
+            "day": 22,
+            "mounth": 9,
+            "time": "9:30 am",
+            "location": "South"
+        },
+        {
+            "team1": "U2",
+            "team2": "U6",
+            "day": 22,
+            "mounth": 9,
+            "time": "1:00 pm",
+            "location": "Howard A Yeager"
+        },
+        {
+            "team1": "U4",
+            "team2": "U5",
+            "day": 29,
+            "mounth": 9,
+            "time": "9:30 am",
+            "location": "Greenbay"
+        },   
+        {
+            "team1": "U2",
+            "team2": "U5",
+            "day": 6,
+            "mounth": 10,
+            "time": "9:30 am",
+            "location": "Marjorie P Hart"
+        },
+        {
+            "team1": "U1",
+            "team2": "U6",
+            "day": 6,
+            "mounth": 10,
+            "time": "1:00 pm",
+            "location": "South"
+        },
+        {
+            "team1": "U3",
+            "team2": "U4",
+            "day": 8,
+            "mounth": 10,
+            "time": "9:30 am",
+            "location": "Howard A Yeager"
+        },
+        {
+            "team1": "U5",
+            "team2": "U1",
+            "day": 8,
+            "mounth": 10,
+            "time": "1:00 pm",
+            "location": "Greenbay"
+        },
+        {
+            "team1": "U6",
+            "team2": "U3",
+            "day": 20,
+            "mounth": 10,
+            "time": "9:30 am",
+            "location": "North"
+        },
+        {
+            "team1": "U2",
+            "team2": "U4",
+            "day": 20,
+            "mounth": 10,
+            "time": "1:00 pm",
+            "location": "Marjorie P Hart"
+        },
+        {
+            "team1": "U3",
+            "team2": "U1",
+            "day": 27,
+            "mounth": 10,
+            "time": "9:30 am",
+            "location": "AJ Katzenmaier"
+        },
+        {
+            "team1": "U5",
+            "team2": "U6",
+            "day": 27,
+            "mounth": 10,
+            "time": "1:00 pm",
+            "location": "Howard A Yeager"
+        }
+    ]
+}
