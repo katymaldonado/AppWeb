@@ -1,8 +1,8 @@
 <template>
   <div class="about">
-    <div class="info">
+    
            <infoa/>
-    </div>
+    
 
    <iconchat/>
 
@@ -27,18 +27,17 @@ export default {
 
 <style>
   
-   .info{
+   .about{
      display: flex;
-    position: relative;
-    color: grey;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 90vh;
-     /* border-radius: 20px;
-     padding: 5px 5px 5px 5px;
-     margin-top: 80px; */ 
-
+     position: relative;
+     color: grey;
+     justify-content: center;
+     top: 5vh;
+   }
+   @media only screen and (orientation: landscape){
+     .about{
+       height: 62vh;
+       margin-top: 10vh;
+     }
    }
 </style>

@@ -1,8 +1,8 @@
 <template>
       <div class="calendar">
-          <div class="view-c">
+          
                <viewcalen/>
-          </div>
+          
 
           <iconchat/>
       </div>
@@ -12,24 +12,30 @@
 import viewcalen from '../components/viewcalen.vue'
 import iconchat from '../components/iconchat.vue'
 
+
+
 export default {
    name: 'Calendar',
    components: {
        viewcalen,
        iconchat
    }
+   
+
 }
 </script>
 
 <style>
   .calendar{
-      width: 100%;
-      height: 100%;
       display: flex;
       justify-content: center;
-
-  }
-  .view-c{
-      margin-top: 10vh;
-  }
+     align-items: center;
+      height: 100%;
+    }
+   @media only screen and (orientation: landscape) {
+     .calendar{
+        margin-top: 12vh;
+      }
+   }
+ 
 </style>

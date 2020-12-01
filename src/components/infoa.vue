@@ -9,7 +9,7 @@
       </b-nav>
     </b-card-header>
  <div class="cards1">
-   <b-card-body class="text-justify" :visible = " true">
+   <b-card-body class="text-justify" :visible = "true">
      
 
       <b-card-text>
@@ -58,10 +58,10 @@
 </script>
 <style lang="scss">
     .abinfo{
-      width: 80vw;
+      width: 90vw;
       position: relative;
-      top: 20px;
       text-align: justify;
+      overflow-y: scroll;
     }
     .cards{
       background-color: transparent;

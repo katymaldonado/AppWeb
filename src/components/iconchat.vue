@@ -19,7 +19,7 @@ export default {
         position: fixed;
         z-index: 999;
         right: 3vw;
-        bottom: 4vh;
+        bottom: 8vh;
         
     }
 </style>

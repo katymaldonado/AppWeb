@@ -1,32 +1,75 @@
 <template>
  <div id="app">
-   <div class="wrapped">
-        <Navegador/>      
-    </div>
+    <template v-if="!landscape">
+       <div class="wrapped">
+         <Navegador/>      
+       </div>
 
-   <div class="main-view" id="body-content">
+      <div class="main-view" id="body-content">
       <router-view/>
-   </div>
-   <div class="footer">
+      </div>
+      <div class="footer">
         <fter/> 
    </div>
+    </template>
+   <template v-else>
+     <div class="wrapped">
+        <Nav2/>
+       </div>
+      <div class="main-view" id="body-content">
+      <router-view/>
+      </div>
+      <div class="footer">
+        <fter/> 
+     </div>
+   </template>
     
  </div>   
 </template>
 
+
 <script>
 
 import Navegador from "./components/Navegador.vue"
+import Nav2 from "./components/Nav2.vue"
 import fter from "./components/footer.vue"
-
+import {mapMutations} from 'vuex'
 
 export default {
   name: 'App',
+  data: function(){
+    return{
+      landscape: window.matchMedia('(min-width: 600px)').matches
+    }
+  },
   components: {
     Navegador,
+    Nav2,
     fter
+  },
+  methods: {
+        ...mapMutations(['insertGames','listenUser']),
+        getGames: async function(api){
+         let promise = await fetch(api)
+         let isOk = promise.ok
+         let json
+         if (isOk) {
+           json = await promise.json();
+         } else{
+           alert(promise.status)
+           return 0;
+         }
+         console.log(json);
+         this.insertGames(json);
+       }
+  },
+  
+  beforeMount(){
+    this.getGames('data-nysl.json');
+    window.addEventListener('resize', () => this.landscape = window.matchMedia('(min-width: 600px)').matches);
+    this.listenUser();
   }
-}
+};
 </script>
 
 
@@ -47,6 +90,7 @@ export default {
 
 body{
     margin: 0;
+   
 }
 
 
@@ -55,8 +99,8 @@ body{
    overflow-y: scroll;
    z-index: 999;
    width: 100%;
-   height: 90vh;
-   top: 6vh;
+   height: 84vh;
+   top: 10vh;
    background-color: #0000;
     
 
@@ -84,10 +128,16 @@ body{
  }
 .footer{
    bottom: 0;
-   
    position: fixed;
    width: 100vw;
    
  }
 
+  @media only screen and (orientation: landscape) {
+ .main-view{
+   overflow-y: scroll;
+   height: 79vh;
+   
+  }
+ }
 </style>

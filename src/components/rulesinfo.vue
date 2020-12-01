@@ -1,5 +1,13 @@
 <template>
-  <div class="accordion mt-1 mb-3" role="tablist">
+  <b-container class="bv-example-row">
+  <b-row>
+    <b-col cols = "12">
+      <dl>RULES OF PLAY & POLICIES</dl> 
+      <p>FIFA rules shall govern NYSL play except as modified herein.</p>
+       <br>
+</b-col>
+    <b-col cols = "12">
+      <div class="accordion mt-1 mb-3" role="tablist">
     <b-card no-body class="mb-1">
       <b-card-header header-tag="header" class="p-1" role="tab">
         <b-button block v-b-toggle.accordion-1 variant="dark">SPORTSMANSHIP</b-button>
@@ -476,6 +484,12 @@
     </b-card>
     
   </div>
+    </b-col>
+
+  </b-row>
+
+  </b-container>
+  
 </template>
 
 <script>
@@ -491,13 +505,6 @@
         if (el) {
           this.$refs.content.scrollTop = el.offsetTop
         }
-      }
-    },
-    data() {
-      return {
-        text: `
-          
-        `
       }
     }
   }

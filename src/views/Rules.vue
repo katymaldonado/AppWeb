@@ -1,8 +1,7 @@
 <template>
   <div class="rules">
-      <div class="rinfo">
-          <dl>RULES OF PLAY & POLICIES</dl> 
-          <p>FIFA rules shall govern NYSL play except as modified herein.</p>
+            <div class="rinfo">
+          
          <rulesinfo/>       
       </div>
      <iconchat/>
@@ -24,14 +23,9 @@ export default {
 
 <style>
    .rules{
-       height: 70vh;
-       margin-top: 46vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      height: 90vh;
+      margin-top: 8vh;
    }
-   .rinfo{
-       width: 80vw;
-
-   }
+   
+   
 </style>

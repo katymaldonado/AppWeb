@@ -1,8 +1,8 @@
 <template>
     <div class="contact">
-        <div id="ic">
-        <continfo/>
-        </div>
+        
+           <continfo/>
+        
         <iconchat/>
     </div>
 </template>
@@ -22,12 +22,9 @@ export default {
 
 <style lang = "scss">
      .contact{
-         height: 100%;
-         display: flex;
-         justify-content: center;
-         align-items: center;
+         height: 80%;
+         margin-top: 10vh;
+         
      }
-     #ic{
-         width: 80vw;
-     }
+     
 </style>

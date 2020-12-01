@@ -30,6 +30,23 @@ const routes = [
     name: 'Contact',
     component: () => import('../views/Contact.vue')
   }
+  ,
+  {
+    path: '/detail',
+    name: 'Detail',
+    component: () => import('../views/Detail.vue')
+  }
+  ,
+  {
+    path: '/user',
+    name: 'User',
+    component: () => import('../views/User.vue')
+  },
+  {
+    path: '/user-info',
+    name: 'UserInfo',
+    component: () => import('../views/UserInfo.vue')
+  }
 ]
 
 const router = new VueRouter({

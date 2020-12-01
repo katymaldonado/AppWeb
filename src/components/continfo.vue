@@ -71,9 +71,13 @@ export default {
 
 <style lang = "scss">
    #r1{
+      width: 80vw;
       background-color: rgba(255, 255, 255, 0.734);
       color: grey;
       border-radius: 20px;
+      margin-top: 5vh;
+
+      margin-bottom: 5vh;
    }
   
 </style>
