@@ -1,26 +1,27 @@
 <template>
-       <div class="home">
+ <div class="home">    
+   <div class="header">
+     <img src="../assets/image1.jpg" alt="imi" id="imi">
+     <h3 class="t2">UPCOMING EVENTS</h3>
+   </div>
      
-      <div class="header">
-        <img src="../assets/image1.jpg" alt="imi" id="imi">
-
-        <h3 class="t2">UPCOMING EVENTS</h3>
-      </div>
-     
-     <div class="events">
-       <div id="e-fst">
-         <b-container class="bv-example-row" >
-           <b-row>
-             <b-col cols="1" class="pl-0"><h5 id="st-1"> 08/04</h5></b-col>
-             <b-col cols="11" class="pt-3"><p>NYSL Fundraiser</p></b-col>
-           </b-row>
-         </b-container>
-       </div>
-         
-       <div>
+   <div class="events">
+     <div id="e-fst">
+       <b-container class="bv-example-row" >
+         <b-row>
+           <b-col cols="1" class="pl-0">
+             <div  id="st-1">
+               <h6> 08/04</h6>
+             </div></b-col>
+           <b-col cols="11" class="pt-3"><p>NYSL Fundraiser</p></b-col>
+         </b-row>
+       </b-container>
+     </div>        
+     <div>
           <b-container class="bv-example-row">
            <b-row>
-             <b-col cols="1" class="pl-0"> <h5 id="st-2">08/16</h5></b-col>
+             <b-col cols="1" class="pl-0">
+                <div id="st-1"><h6>08/16</h6></div></b-col>
              <b-col cols="11" class="pt-1 pl-4"><p>Season Kick-off: Meet the Teams</p></b-col>
            </b-row>
          </b-container>
@@ -29,7 +30,8 @@
        <div>
           <b-container class="bv-example-row">
            <b-row>
-             <b-col cols="1" class="pl-0 pt-1"><h5 id="st-1">09/01</h5></b-col>
+             <b-col cols="1" class="pl-0 pt-1">
+               <div id="st-1"><h6>09/01</h6></div></b-col>
              <b-col cols="11" class="pl-3"><p>First Game of the Season (Check Game Schedule for details)</p></b-col>
            </b-row>
          </b-container>
@@ -72,7 +74,7 @@ export default {
   .events{
     display: flex;
     height: 50vh;
-    position: relative;
+    
     color: grey;
     flex-direction: column;
     justify-content: center;
@@ -90,23 +92,35 @@ export default {
     padding: 5px 0px 5px 10px;
     border-radius: 20px;
   }
-  div h5{
-    padding:14px 10px 10px 2px;
+   #st-1{
+    /* padding:14px 13px 10px 2px; */
     height: 55px; width: 55px; border-radius: 50%;
     color: white;
     margin: 0;
-  }
-  #st-1{
+     display: flex;
+     justify-content: center;
+    align-items: center;
      background-color: rgba(138,255,212,1);
   }
-  #st-2{
-    background-color: rgba(126,255,182,1);
-  }
+  
   div p{
       padding: 0px 0px 0px 5px;
       font-weight:700;
       margin-bottom: 0;
       
-  }   
-
+  }
+  @media only screen and (orientation: landscape){
+     .home{
+          height: 60vh;
+     }
+     .header{
+       height: 60vh;
+     }
+      
+     .events{
+       margin-top: 10vh;
+       
+     }
+     
+   } 
 </style>

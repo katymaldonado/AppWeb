@@ -36,8 +36,9 @@ export default {
    }
    @media only screen and (orientation: landscape){
      .about{
-       height: 62vh;
-       margin-top: 10vh;
+       height: 72vh;
+       margin-top: 4vh;
+       padding-bottom: 20px;
      }
    }
 </style>

@@ -46,7 +46,18 @@ const routes = [
     path: '/user-info',
     name: 'UserInfo',
     component: () => import('../views/UserInfo.vue')
+  },
+  {
+    path: '/chat/:index',
+    name: 'Chat',
+    component: () => import('../views/Chat.vue')
+  },
+  {
+    path: '/chatall',
+    name: 'ChatAll',
+    component: () => import('../views/ChatAll.vue')
   }
+
 ]
 
 const router = new VueRouter({

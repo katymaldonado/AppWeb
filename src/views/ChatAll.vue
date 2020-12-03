@@ -1,7 +1,7 @@
 <template>
-  <div id="chatroom" class="h-100">
+  <div id="chatgral" class="h-100">
       <template v-if="user == null">
-         <div class="loguser">
+        <div class="loguser">
         <b-container class="bv-example-row" id="userst">
            <b-row class="text-center">
              <b-col></b-col>
@@ -20,8 +20,8 @@
       </template>
       <template v-else>
          <div id="body">
-            <h4 class="mt-3" title="tchat">{{gameselect.team1}} vs. {{gameselect.team2}}</h4>
-            <div id="lector">
+              <h4 class="mt-3" title="tchat">Public Chat</h4>
+              <div id="lector">
              <div v-for="(message,index) in messages" :key="index" class="bubble">
                 <p id="name">
                    <strong>{{message.author}} said:</strong>
@@ -29,8 +29,8 @@
                 <p>
                    {{message.body}}
                 </p>
-             </div>
-             </div>    
+             </div> 
+            </div>   
              <form @submit.prevent="post()" id="writer">
                 <b-container>
                    <b-row>
@@ -48,7 +48,7 @@
 import {mapState} from 'vuex'
 import {db} from "../firebase/db.js"
 export default {
-   name:'Chat',
+   name:'ChatAll',
    data(){
       return{
         messages:[],
@@ -57,7 +57,7 @@ export default {
    }, 
    methods:{
       post: function(){
-        let folder = db.ref("forum/game" + this.$route.params.index);
+        let folder = db.ref("forum/gameall");
         
         let message = {
            body: this.input,
@@ -70,11 +70,11 @@ export default {
       }
    },
    computed: {
-      ...mapState(['user','gameselect'])
+      ...mapState(['user'])
    },
    mounted(){
       this.messages =[];
-      db.ref("forum/game" + this.$route.params.index).on("child_added",(snapshop) =>{
+      db.ref("forum/gameall").on("child_added",(snapshop) =>{
          this.messages.push(snapshop.val())
       })
    }
@@ -94,44 +94,20 @@ export default {
      margin: 15px;
      width: 90vw;
      border-radius: 20px;
-     background-color: rgba(138,255,212,1);;
+     background-color:  rgba(126,255,182,1);
   }
   #writer{
-     position: absolute;
-     bottom: 0;
+     position: fixed;
+     bottom: 8vh;
+  }
+  #lector{
+     height: 69vh;
+     overflow-y: scroll;
   }
   #name{
      color: grey;
   }
-   #lector{
-     height: 69vh;
-     overflow-y: scroll;
-  }
   #tchat{
      position: fixed;
   }
-  .loguser{
-     height: 100%;
-     display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-content: center;
-  }
-  #userst{
-      width: 80vw;
-      height: 65vh;
-      background-color: rgba(255, 255, 255, 0.734);
-      color: grey;
-      border-radius: 20px;
-      margin-top: 5vh;
-      margin-bottom: 5vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-content: center;
-      padding-top:5vh ;
-   }
-   b-button{
-      text-decoration: none;
-   }
 </style>

@@ -8,14 +8,19 @@ export default new Vuex.Store({
   state: {
     myGames: [],
     dates: '',
-    month: null,
-    date: null,
-    gamesfil: [],
-    user:null
+    filteredByDate: [],
+    user:null,
+    landscape: window.matchMedia("(min-width: 600px)").matches,
+    gameselect: null
   },
   mutations: {
     insertGames(state,payload){
       state.myGames = payload
+    },
+    listenResize(state){
+      window.addEventListener(
+        'resize', 
+        () => state.landscape = window.matchMedia('(min-width: 600px)').matches);
     },
     dateselected(state, payload){
       state.dates = payload
@@ -25,7 +30,7 @@ export default new Vuex.Store({
         state.month = payload.month
     },
     gamesfiltrados(state, payload){
-      state.gamesfil = payload
+      state.filteredByDate = payload
     },
     listenUser(state){
       firebase.auth().onAuthStateChanged(user =>{
@@ -36,6 +41,9 @@ export default new Vuex.Store({
           state.user = null
         }
       });
+    },
+    gamechat(state,payload){
+      state.gameselect = payload[0]
     }
   },
   actions: {

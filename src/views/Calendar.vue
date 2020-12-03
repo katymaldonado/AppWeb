@@ -1,10 +1,7 @@
 <template>
       <div class="calendar">
-          
-               <viewcalen/>
-          
-
-          <iconchat/>
+         <viewcalen/>
+         <iconchat/>
       </div>
 </template>
 
@@ -27,15 +24,12 @@ export default {
 
 <style>
   .calendar{
+      height: 100%;
       display: flex;
       justify-content: center;
-     align-items: center;
-      height: 100%;
+      align-items: center;
+      flex-direction: column;
     }
-   @media only screen and (orientation: landscape) {
-     .calendar{
-        margin-top: 12vh;
-      }
-   }
+  
  
 </style>

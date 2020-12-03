@@ -1,7 +1,7 @@
 <template>
  <div class="icono">
      <b-col class="mb-2">
-         <router-link to="/chat"><p class="h1 mb-2"><b-icon variant = "dark" icon="chat-right-text"></b-icon></p></router-link>
+         <router-link to="/chatall"><p class="h1 mb-2"><b-icon variant = "dark" icon="chat-right-text"></b-icon></p></router-link>
      </b-col>
  </div>
 </template>

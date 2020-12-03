@@ -1,21 +1,49 @@
 <template>
-  <div class="calenview" id= "cal">
-    <b-calendar   block 
-      :date-format-options="{year: 'numeric', month: 'numeric', day: 'numeric' }"
-      locale="en" @selected="SelectDate" v-model='date'
-    >
+  <div class="h-100 align-items-center" id="viewc">
+     <template v-if="landscape" >
+        <b-container class="pt-3 mt-3 pb-2 mb-2">
+          <b-row>
+             <b-col cols="12"><p class="h3">GAME CALENDAR</p></b-col>
+          </b-row>
+         <b-row >
+           <b-col cols="6">
+             <b-calendar   block 
+               :date-format-options="{year: 'numeric', month: 'numeric', day: 'numeric' }"
+               locale="en" @selected="SelectDate" v-model='date'>
+             </b-calendar>
+           </b-col>
+           <b-col cols="6">
+             
+                 <Detail/>
+               
+           </b-col>
+         </b-row>
+       </b-container>   
+     </template>
+     <template v-else>
+       <div  id= "cal">
+       <p class="h3">GAME CALENDAR</p>
+       <div>
+         <b-calendar   block 
+           :date-format-options="{year: 'numeric', month: 'numeric', day: 'numeric' }"
+           locale="en" @selected="SelectDate" v-model='date'>
+         </b-calendar>
+       </div>
+       </div>
+     </template>
      
-    </b-calendar>
-    
   </div>
 </template>
 
 <script>
-
+  import Detail from '../views/Detail.vue'
   import {mapState,mapMutations} from 'vuex'
 
   export default {
     name: 'viewcalen',
+    components:{
+     Detail 
+    },
     data(){
       return{
         date:'',
@@ -26,10 +54,10 @@
       }
     },
     computed: {
-     ...mapState(['myGames'])
+     ...mapState(['myGames','landscape'])
    },
    methods: {
-       ...mapMutations(['dateselected', 'gamesfiltrados', 'selectdate']),
+       ...mapMutations(['dateselected', 'gamesfiltrados']),
        SelectDate() {
           console.log(this.date)
           this.ms = new Date(this.date + 'GMT-03:00');
@@ -39,19 +67,21 @@
           console.log(this.mes)
           this.dateselected(this.date);
           
-         console.log(this.myGames.length);
+         console.log(this.myGames.Games.length);
          console.log(this.myGames);
 
-         for (let i = 0; i < this.myGames.length; i++) {
-           if (this.myGames[i].mounth == this.mes && this.myGames[i].day == this.fecha) {
-                this.gamesday.push(this.myGames[i])
-                this.$router.push('/detail')  
-           }
-             else{
-              window.alert("No hay Partidos para esta fecha");
-             }
+         const aux = this.myGames.Games.filter(game => game.mounth == this.mes && game.day == this.fecha)
+         
+         if (aux == 0) {
+           alert("No hay Partidos para esta fecha");
          }
-          this.gamesfiltrados(this.gamesday)
+         else{
+           this.gamesfiltrados(aux)
+           console.log(aux)
+           if(this.landscape == false){
+               this.$router.push('/detail')
+           }
+         }
           //this.$router.push('/detail')   
        }
    }
@@ -62,11 +92,14 @@
 
 
 <style lang = "scss">
-   .calenview{
-      width: 80vw;
-      background-color: rgba(255, 255, 255, 0.734);
+   #viewc{
+     width: 80vw;
    }
-   #cal{
-      background-color: rgba(255, 255, 255, 0.734);
-   }
+  #cal{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 </style>

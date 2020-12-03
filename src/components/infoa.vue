@@ -1,11 +1,12 @@
 <template>
   <div class="abinfo">
+    <p class="h2">About us</p>
   <b-card no-body class="cards"> 
     <b-card-header header-tag="nav" class="barra">
       <b-nav card-header tabs>
-        <b-nav-item  class="pr-0" id="navi" ><b-button v-b-toggle= "'collapse-a'" visible class="p-0 bg-transparent border-0" id="b"><p>MISSION</p></b-button></b-nav-item>
-        <b-nav-item id="navi"><b-button v-b-toggle= "'collapse-b'" class="p-0  bg-transparent border-0" id="b"><p>Vission</p></b-button></b-nav-item>
-        <b-nav-item id="navi"><b-button v-b-toggle= "'collapse-c'" class="p-0  bg-transparent border-0" id="b"><p>Vission</p></b-button></b-nav-item>
+        <b-nav-item  class="pr-0" id="navi" ><b-button v-b-toggle= "'collapse-a'" visible class="p-0 bg-transparent border-0 active visible" id="b"><p>MISSION</p></b-button></b-nav-item>
+        <b-nav-item id="navi"><b-button v-b-toggle= "'collapse-b'" class="p-0  bg-transparent border-0" id="b"><p>VISSION</p></b-button></b-nav-item>
+        <b-nav-item id="navi"><b-button v-b-toggle= "'collapse-c'" class="p-0  bg-transparent border-0" id="b"><p>GAME</p></b-button></b-nav-item>
       </b-nav>
     </b-card-header>
  <div class="cards1">
@@ -57,11 +58,14 @@
   }
 </script>
 <style lang="scss">
-    .abinfo{
+  .abinfo{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 90vw;
-      position: relative;
       text-align: justify;
-      overflow-y: scroll;
+      padding-bottom: 20px;
+
     }
     .cards{
       background-color: transparent;
@@ -74,5 +78,8 @@
     }
     #navi{
       background-color:rgba(255, 255, 255, 0.734);
+    }
+    .h2{
+       color: white;
     }
 </style>

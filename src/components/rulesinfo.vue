@@ -1,5 +1,5 @@
 <template>
-  <b-container class="bv-example-row">
+  <b-container class="bv-example-row mt-5">
   <b-row>
     <b-col cols = "12">
       <dl>RULES OF PLAY & POLICIES</dl> 

@@ -10,7 +10,6 @@
 
 import iconchat from "../components/iconchat.vue"
 import homeview from "../components/homeview.vue"
-
 export default {
   name: 'Home',
   components: {
@@ -24,16 +23,5 @@ export default {
   #h{
       height: 100%;
   }
-     @media only screen and (orientation: landscape){
-     
-     .header{
-       height: 90%;
-     }
-      
-     .events{
-       margin-top: 10vh;
-       margin-bottom: 10vh;
-     }
-  
-   }
+
 </style>

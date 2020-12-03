@@ -20,6 +20,7 @@ export default {
   .footr{
       background-color: black;
       padding-top: 0;
+      z-index: 999;
   }
   #fc{
       width: 15px;

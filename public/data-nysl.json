@@ -1,140 +1,192 @@
 {
     "Games": [
         {
+            "id":0,
             "team1": "U1",
             "team2": "U4",
             "day": 1,
             "mounth": 9,
             "time": "9:30 am",
-            "location": "AJ Katzenmaier"
+            "location": "AJ Katzenmaier Elementary",
+            "address":"24 W. Walton St., Chicago, IL 60610",
+            "codLocation":1
         },
         {
+            "id":1,
             "team1": "U3",
             "team2": "U2",
             "day": 1,
             "mounth": 9,
             "time": "1:00 pm",
-            "location": "Greenbay"
+            "location": "Greenbay Elementary",
+            "address":"1734 N. Orleans St., Chicago, IL 60614",
+            "codLocation":2
         },
         {
+            "id":2,
             "team1": "U5",
             "team2": "U6",
             "day": 8,
             "mounth": 9,
             "time": "9:30 am",
-            "location": "Howard A Yeager"
+            "location": "Howard A Yeager Elementary",
+            "address":"2245 N. Southport Ave., Chicago, IL 60614",
+            "codLocation":3
         },
         {
+            "id":3,
             "team1": "U6",
             "team2": "U1",
             "day": 8,
             "mounth": 9,
             "time": "1:00 pm",
-            "location": "Marjorie P Hart"
+            "location": "Marjorie P Hart Elementary",
+            "address":"2625 N. Orchard St., Chicago, IL 60614",
+            "codLocation":4
         },
         {
+            "id":4,
             "team1": "U2",
             "team2": "U4",
             "day": 15,
             "mounth": 9,
             "time": "9:30 am",
-            "location": "North"
+            "location": "North Elementary",
+            "address":"1409 N. Ogden Ave., Chicago, IL 60610",
+            "codLocation":5
         },
         {
+            "id":5,
             "team1": "U3",
             "team2": "U5",
             "day": 15,
             "mounth": 9,
             "time": "1:00 pm",
-            "location": "AJ Katzenmaier"
+            "location": "AJ Katzenmaier Elementary",
+            "address":"24 W. Walton St., Chicago, IL 60610",
+            "codLocation":1
+
         },
         {
+            "id":6,
             "team1": "U1",
             "team2": "U3",
             "day": 22,
             "mounth": 9,
             "time": "9:30 am",
-            "location": "South"
+            "location": "South Elementary",
+            "address":"2101 N. Fremont St., Chicago, IL 60614",
+            "codLocation":6
         },
         {
+            "id":7,
             "team1": "U2",
             "team2": "U6",
             "day": 22,
             "mounth": 9,
             "time": "1:00 pm",
-            "location": "Howard A Yeager"
+            "location": "Howard A Yeager Elementary",
+            "address":"2245 N. Southport Ave., Chicago, IL 60614",
+            "codLocation":3
         },
         {
+            "id":8,
             "team1": "U4",
             "team2": "U5",
             "day": 29,
             "mounth": 9,
             "time": "9:30 am",
-            "location": "Greenbay"
+            "location": "Greenbay Elementary",
+            "address":"1734 N. Orleans St., Chicago, IL 60614",
+            "codLocation":2
         },   
         {
+            "id":9,
             "team1": "U2",
             "team2": "U5",
             "day": 6,
             "mounth": 10,
             "time": "9:30 am",
-            "location": "Marjorie P Hart"
+            "location": "Marjorie P Hart Elementary",
+            "address":"2625 N. Orchard St., Chicago, IL 60614",
+            "codLocation":4
         },
         {
+            "id":10,
             "team1": "U1",
             "team2": "U6",
             "day": 6,
             "mounth": 10,
             "time": "1:00 pm",
-            "location": "South"
+            "location": "South Elementary",
+            "address":"2101 N. Fremont St., Chicago, IL 60614",
+            "codLocation":6
         },
         {
+            "id":11,
             "team1": "U3",
             "team2": "U4",
             "day": 8,
             "mounth": 10,
             "time": "9:30 am",
-            "location": "Howard A Yeager"
+            "location": "Howard A Yeager Elementary",
+            "address":"2245 N. Southport Ave., Chicago, IL 60614",
+            "codLocation":3
         },
         {
+            "id":12,
             "team1": "U5",
             "team2": "U1",
             "day": 8,
             "mounth": 10,
             "time": "1:00 pm",
-            "location": "Greenbay"
+            "location": "Greenbay Elementary",
+            "address":"1734 N. Orleans St., Chicago, IL 60614",
+            "codLocation":2
         },
         {
+            "id":13,
             "team1": "U6",
             "team2": "U3",
             "day": 20,
             "mounth": 10,
             "time": "9:30 am",
-            "location": "North"
+            "location": "North Elementary",
+            "address":"1409 N. Ogden Ave., Chicago, IL 60610",
+            "codLocation":5
         },
         {
+            "id":14,
             "team1": "U2",
             "team2": "U4",
             "day": 20,
             "mounth": 10,
             "time": "1:00 pm",
-            "location": "Marjorie P Hart"
+            "location": "Marjorie P Hart Elementary",
+            "address":"2625 N. Orchard St., Chicago, IL 60614",
+            "codLocation":4
         },
         {
+            "id":15,
             "team1": "U3",
             "team2": "U1",
             "day": 27,
             "mounth": 10,
             "time": "9:30 am",
-            "location": "AJ Katzenmaier"
+            "location": "AJ Katzenmaier Elementary",
+            "address":"24 W. Walton St., Chicago, IL 60610",
+            "codLocation":1
         },
         {
+            "id":16,
             "team1": "U5",
             "team2": "U6",
             "day": 27,
             "mounth": 10,
             "time": "1:00 pm",
-            "location": "Howard A Yeager"
+            "location": "Howard A YeagerElementary",
+            "address":"2245 N. Southport Ave., Chicago, IL 60614",
+            "codLocation":3
         }
     ]
 }

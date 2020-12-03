@@ -13,10 +13,10 @@
    </div>
     </template>
    <template v-else>
-     <div class="wrapped">
+     <div class="wrappedland">
         <Nav2/>
        </div>
-      <div class="main-view" id="body-content">
+      <div class="main-viewland" id="body-content">
       <router-view/>
       </div>
       <div class="footer">
@@ -33,22 +33,20 @@
 import Navegador from "./components/Navegador.vue"
 import Nav2 from "./components/Nav2.vue"
 import fter from "./components/footer.vue"
-import {mapMutations} from 'vuex'
+import {mapState,mapMutations} from 'vuex'
 
 export default {
   name: 'App',
-  data: function(){
-    return{
-      landscape: window.matchMedia('(min-width: 600px)').matches
-    }
-  },
   components: {
     Navegador,
     Nav2,
     fter
   },
+  computed:{
+    ...mapState(['landscape'])
+  },
   methods: {
-        ...mapMutations(['insertGames','listenUser']),
+        ...mapMutations(['insertGames','listenUser','listenResize']),
         getGames: async function(api){
          let promise = await fetch(api)
          let isOk = promise.ok
@@ -66,7 +64,7 @@ export default {
   
   beforeMount(){
     this.getGames('data-nysl.json');
-    window.addEventListener('resize', () => this.landscape = window.matchMedia('(min-width: 600px)').matches);
+    this.listenResize();
     this.listenUser();
   }
 };
@@ -100,7 +98,7 @@ body{
    z-index: 999;
    width: 100%;
    height: 84vh;
-   top: 10vh;
+   top: 9vh;
    background-color: #0000;
     
 
@@ -112,6 +110,7 @@ body{
   height: 100vh;
   background: linear-gradient(135deg, rgba(92,255,97,1) 0%, rgba(111,255,145,1) 38%, rgba(126,255,182,1) 68%, rgba(138,255,212,1) 92%, rgba(138,255,212,1) 100%);
   display: flex;
+  justify-content: center;
   position: absolute;
 
 
@@ -132,12 +131,23 @@ body{
    width: 100vw;
    
  }
-
-  @media only screen and (orientation: landscape) {
- .main-view{
+.wrappedland{
+   width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(92,255,97,1) 0%, rgba(111,255,145,1) 38%, rgba(126,255,182,1) 68%, rgba(138,255,212,1) 92%, rgba(138,255,212,1) 100%);
+  display: flex;
+  justify-content: center;
+  position: absolute; 
+}
+.main-viewland{
+    position: fixed;
    overflow-y: scroll;
+   z-index: 999;
+   width: 100%;
    height: 79vh;
+  
+   background-color: #0000;
    
-  }
- }
+}
+ 
 </style>
