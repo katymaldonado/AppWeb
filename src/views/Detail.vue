@@ -1,21 +1,22 @@
 <template>
   <div class="detail">
       <h1 >{{dates}}</h1>
+     
        <div v-for="(filtered, index) in filteredByDate" :key="index" class="game">
-         <b-container class="bv-example-row" >
+         <b-container class="bv-example-row">
            <b-row>
-             <b-col cols="3" class="pl-0 pl-4" ><h5 id="circle">{{filtered.time}}</h5></b-col>
-             <b-col cols="9" class="pt-3 pl-0" id="infogames">
+             <b-col cols="3" class="pl-2 pt-2" ><div id="circle"><dl class="m-0">{{filtered.time}}</dl></div></b-col>
+             <b-col cols="9" sm="12" class="pt-3" id="infogames">
                <b-container class="bv-example-row">
                  <b-row>
                    <b-col cols="4">
                      <b-icon icon="shield-shaded" font-scale="3" variant="dark"></b-icon>
-                     <br> <h4>{{filtered.team1}}</h4>
+                     <br> <h4 class="pl-2">{{filtered.team1}}</h4>
                    </b-col>
                    <b-col cols="4" align-self="end">VS.</b-col>
                    <b-col  cols="4">
                      <b-icon icon="shield-shaded" font-scale="3" variant="dark"></b-icon>
-                      <h4>{{filtered.team2}}</h4>
+                      <h4 class="pl-2">{{filtered.team2}}</h4>
                    </b-col>
                  </b-row>
                   </b-container >
@@ -28,9 +29,9 @@
                    <b-row align-v="center">
                      <b-col></b-col>
                      <b-col>
-                       <b-button v-b-toggle.collapse-1 variant="dark">View Map</b-button>
+                       <b-button v-b-toggle.collapse-1 variant="dark">Map</b-button>
                      </b-col>
-                     <b-col ><router-link :to="'/chat/'+ index" v-model="filtered.id" @click="SelectGame()" ><b-icon icon="chat-left-text-fill" font-scale="2.5" variant="dark" class="mt-2"></b-icon></router-link></b-col>
+                     <b-col ><router-link :to="'/chat/'+ index" ><b-icon icon="chat-left-text-fill" font-scale="2.5" variant="dark" class="mt-2"></b-icon></router-link></b-col>
                      <b-col cols="12">
                                <b-collapse id="collapse-1" class="mt-2">
                      <b-card bg-variant="transparent" >
@@ -90,19 +91,18 @@ export default {
     name: 'Detail',
     data(){
       return{
-        
-
+        num:Number
       }
     },
     computed: {
-        ...mapState(['filteredByDate'])
+        ...mapState(['dates','filteredByDate'])
     },
     methods: {
         ...mapMutations(['gamechat']),
          SelectGame() {
           console.log("aparece el game")
-          // this.num = 
-          const games = this.filteredByDate.filter(game => game.id == this.filtered.id)
+          this.num = this.filtered.id
+          const games = this.filteredByDate.filter(game => game.id == this.num)
           this.gamechat(games)
           console.log(games);
     }
@@ -118,21 +118,22 @@ export default {
       align-items: center;
   }
   .game{
-    display: block;
+    display: flex;
     align-items: center;
-    position: relative;
     background-color: rgba(255, 255, 255, 0.734);
     margin-bottom: 10px;
-    width: 100%;
+    width: 90%;
     padding: 5px 0px 5px 0px;
     border-radius: 20px;
   }
   #circle{
-    padding:10px 8px 8px 2px;
-    height: 62px; width: 62px; border-radius: 50%;
+    padding:10px;
+    height: 55px; width: 55px; border-radius: 50%;
     color: white;
     margin: 0;
-    text-align: center;
+    display: flex;
+     justify-content: center;
+    align-items: center;
     background-color: rgba(138,255,212,1);
   }
   .pl-0{

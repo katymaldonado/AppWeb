@@ -12,10 +12,10 @@
                locale="en" @selected="SelectDate" v-model='date'>
              </b-calendar>
            </b-col>
-           <b-col cols="6">
-             
-                 <Detail/>
-               
+           <b-col cols="6" >
+               <template id="littledetail">
+                   <Detail/>
+               </template>             
            </b-col>
          </b-row>
        </b-container>   
@@ -101,5 +101,8 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+  }
+  #littedetail{
+    overflow-y: scroll;
   }
 </style>

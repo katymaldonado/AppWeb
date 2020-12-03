@@ -20,7 +20,7 @@
       </template>
       <template v-else>
          <div id="body">
-            <h4 class="mt-3" title="tchat">{{gameselect.team1}} vs. {{gameselect.team2}}</h4>
+            <h4 class="mt-3" title="tchat"> vs.</h4>
             <div id="lector">
              <div v-for="(message,index) in messages" :key="index" class="bubble">
                 <p id="name">
