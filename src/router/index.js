@@ -57,6 +57,12 @@ const routes = [
     name: 'ChatAll',
     component: () => import('../views/ChatAll.vue')
   }
+  // ,
+  // {
+  //   path: '/gamessave',
+  //   name: 'GamesSave',
+  //   component: () => import('../views/GamesSaves.vue')
+  // }
 
 ]
 

@@ -517,5 +517,11 @@
 p{
   text-align: justify;
 }
-  
+*::-webkit-scrollbar{
+   width: 5px;
+}
+*::-webkit-scrollbar-thumb{
+   background: #343a40;
+  border-radius: 5px;
+}
 </style>

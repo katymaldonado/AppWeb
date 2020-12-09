@@ -1,11 +1,12 @@
 <template>
   <div class="detail">
+    <div class="t-date">
       <h1 >{{dates}}</h1>
-     
+    </div> 
        <div v-for="(filtered, index) in filteredByDate" :key="index" class="game">
          <b-container class="bv-example-row">
            <b-row>
-             <b-col cols="3" class="pl-2 pt-2" ><div id="circle"><dl class="m-0">{{filtered.time}}</dl></div></b-col>
+             <b-col cols="3" sm="12" class="pl-2 pt-2" ><div id="circle"><dl class="m-0">{{filtered.time}}</dl></div></b-col>
              <b-col cols="9" sm="12" class="pt-3" id="infogames">
                <b-container class="bv-example-row">
                  <b-row>
@@ -27,11 +28,13 @@
                <div>
                  <b-container>
                    <b-row align-v="center">
-                     <b-col></b-col>
+                     <b-col>
+                       <!-- <router-link to="/gamessave" ><b-icon icon="bookmarks-fill" font-scale="2.5" variant="dark" class="mt-2"></b-icon></router-link> -->
+                     </b-col>
                      <b-col>
                        <b-button v-b-toggle.collapse-1 variant="dark">Map</b-button>
                      </b-col>
-                     <b-col ><router-link :to="'/chat/'+ index" ><b-icon icon="chat-left-text-fill" font-scale="2.5" variant="dark" class="mt-2"></b-icon></router-link></b-col>
+                     <b-col><b-button @click="SelectGame" v-model="key" id="icon"><router-link :to="'/chat/'+ index" ><b-icon icon="chat-left-text-fill"  font-scale="2.5" variant="dark" class="mt-2" ></b-icon></router-link></b-button></b-col>
                      <b-col cols="12">
                                <b-collapse id="collapse-1" class="mt-2">
                      <b-card bg-variant="transparent" >
@@ -86,12 +89,11 @@
 
 <script>
 import {mapMutations, mapState} from 'vuex';
-
 export default {
     name: 'Detail',
     data(){
       return{
-        num:Number
+        gamef:[]
       }
     },
     computed: {
@@ -101,21 +103,46 @@ export default {
         ...mapMutations(['gamechat']),
          SelectGame() {
           console.log("aparece el game")
-          this.num = this.filtered.id
-          const games = this.filteredByDate.filter(game => game.id == this.num)
-          this.gamechat(games)
-          console.log(games);
+           console.log(this.filteredByDate);
+           
+           
+           for (let i = 0; i < this.filteredByDate.length; i++) {
+             console.log('Entro FOR')
+             if (this.filteredByDate[i].index == this.key) {
+               console.log(this.filteredByDate[i].index)
+                console.log(this.key)
+                this.gamef.push(this.filteredByDate[i])
+                console.log('YA FILTRO')
+                console.log(this.gamef)
+             }
+             
+           }
+          // const games = this.filteredByDate.filter(game => game.id == this.filtered.id)
+          
+         this.gamechat(this.gamef)
+         console.log(this.gamef);
+       }
+     },
+    created: function () {
+         this.SelectGame()
     }
-    }}
+   }
 </script>
 
 <style lang="scss">
   .detail{
-      height: 100%;
+      height: 100vh;
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      
+  }
+  .t-date{
+     width: 80vw;
+     background-color: rgba(138,255,212,1);
+     border-radius: 20px;
+     margin: 2vh 0; 
   }
   .game{
     display: flex;
@@ -136,6 +163,10 @@ export default {
     align-items: center;
     background-color: rgba(138,255,212,1);
   }
+  #icon{
+    background-color: transparent;
+    border: none;
+  }
   .pl-0{
     padding-top: 10px;
   }
@@ -148,5 +179,21 @@ export default {
   iframe{
     width: 100%;
     height: 100%;
+  }
+   @media only screen and (orientation: landscape){
+     .detail{
+       height: 86vh;
+       overflow-y: scroll;
+     }
+     #circle, .t-date{
+        height: 100%; width: 100%; border-radius: 20px;
+     }
+     .detail::-webkit-scrollbar{
+        width: 5px;
+     }
+     .detail::-webkit-scrollbar-thumb{
+       background: #343a40;
+       border-radius: 5px;
+     }
   }
 </style>

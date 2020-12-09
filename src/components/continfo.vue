@@ -75,9 +75,8 @@ export default {
       background-color: rgba(255, 255, 255, 0.734);
       color: grey;
       border-radius: 20px;
-      margin-top: 5vh;
-
-      margin-bottom: 5vh;
+      margin-top: 6vh;
+      margin-bottom: 6vh;
    }
   
 </style>

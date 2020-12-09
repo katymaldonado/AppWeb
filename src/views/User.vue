@@ -127,5 +127,12 @@ export default {
    border-radius: 20px;
    color: grey;
  }
+  @media only screen and (orientation: landscape){
+    
+    .inuser{
+      margin-top: 7vh;
+    }
+     
+  }
 
 </style>

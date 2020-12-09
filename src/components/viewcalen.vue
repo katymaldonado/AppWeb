@@ -1,7 +1,8 @@
 <template>
   <div class="h-100 align-items-center" id="viewc">
      <template v-if="landscape" >
-        <b-container class="pt-3 mt-3 pb-2 mb-2">
+       <div class="container-cal">
+        <b-container class="pt-4 mt-3 pb-2 mb-2">
           <b-row>
              <b-col cols="12"><p class="h3">GAME CALENDAR</p></b-col>
           </b-row>
@@ -13,22 +14,23 @@
              </b-calendar>
            </b-col>
            <b-col cols="6" >
-               <template id="littledetail">
+               
                    <Detail/>
-               </template>             
+                           
            </b-col>
          </b-row>
-       </b-container>   
+       </b-container>
+       </div>   
      </template>
      <template v-else>
        <div  id= "cal">
-       <p class="h3">GAME CALENDAR</p>
-       <div>
-         <b-calendar   block 
-           :date-format-options="{year: 'numeric', month: 'numeric', day: 'numeric' }"
-           locale="en" @selected="SelectDate" v-model='date'>
-         </b-calendar>
-       </div>
+         <p class="h3">GAME CALENDAR</p>
+         <div>
+           <b-calendar   block 
+             :date-format-options="{year: 'numeric', month: 'numeric', day: 'numeric' }"
+             locale="en" @selected="SelectDate" v-model='date'>
+           </b-calendar>
+         </div>
        </div>
      </template>
      
@@ -94,6 +96,12 @@
 <style lang = "scss">
    #viewc{
      width: 80vw;
+     height: 100%;
+   }
+   .container-cal, #cal{
+     border: 2px solid white ;
+     border-top: none;
+     border-bottom: none;
    }
   #cal{
     height: 100%;
@@ -102,7 +110,5 @@
     flex-direction: column;
     align-items: center;
   }
-  #littedetail{
-    overflow-y: scroll;
-  }
+
 </style>

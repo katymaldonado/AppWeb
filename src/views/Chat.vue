@@ -20,7 +20,7 @@
       </template>
       <template v-else>
          <div id="body">
-            <h4 class="mt-3" title="tchat"> vs.</h4>
+            <h4 class="mt-3" title="tchat">CHATROOM</h4>
             <div id="lector">
              <div v-for="(message,index) in messages" :key="index" class="bubble">
                 <p id="name">
@@ -88,6 +88,7 @@ export default {
      justify-content: center;
      align-items: center;
      flex-direction: column;
+    
   }
   .bubble{
      padding: 10px;
@@ -134,4 +135,15 @@ export default {
    b-button{
       text-decoration: none;
    }
+    @media only screen and (orientation: landscape){
+     #lector{
+       height: 54vh;
+     }
+     #body{  
+        height: 90%;
+     }
+     #writer{
+        bottom: 3vh;
+     }
+    }
 </style>

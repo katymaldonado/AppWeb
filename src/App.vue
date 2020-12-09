@@ -100,8 +100,7 @@ body{
    height: 84vh;
    top: 9vh;
    background-color: #0000;
-    
-
+   margin-bottom: 8vh;
 }
 
 
@@ -120,16 +119,12 @@ body{
    
  }
  
-
- 
- 
-
- }
+}
 .footer{
    bottom: 0;
    position: fixed;
    width: 100vw;
-   
+   height: 9vh;
  }
 .wrappedland{
    width: 100%;
@@ -144,10 +139,15 @@ body{
    overflow-y: scroll;
    z-index: 999;
    width: 100%;
-   height: 79vh;
-  
+   height: 82vh;
    background-color: #0000;
    
 }
- 
+.main-view::-webkit-scrollbar,.main-viewland::-webkit-scrollbar{
+  width: 7px;
+}
+.main-view::-webkit-scrollbar-thumb,.main-viewland::-webkit-scrollbar-thumb{
+  background: #343a40;
+  border-radius: 5px;
+}
 </style>
