@@ -1,9 +1,9 @@
 <template>
   <div class="abinfo">
     <p class="h2">About us</p>
-    <div>
+    <div >
       <b-card no-body>
-        <b-tabs card>
+        <b-tabs card >
          <b-tab title="MISSION">
            <b-card-text><p>To support young athletes living in Chicago´s northside neighborhoods, who have an interest 
                in learning and playing soccer, with opportunities to learn and practice skills related to the game 
@@ -45,10 +45,19 @@
       justify-content: center;
       width: 85vw;
       text-align: justify;
-      padding-bottom: 20px;
+      
 
     }
    .h2{
        color: white;
     }
+    
+.card-header{
+  background-color: #343a40 !important ;
+  
+}
+.nav-link{
+  color: white;
+}
+
 </style>

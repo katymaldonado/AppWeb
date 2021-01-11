@@ -22,9 +22,15 @@ export default {
 
 <style lang = "scss">
      .contact{
-         height: 80%;
+         height: 65vh;
          margin-top: 10vh;
-         
      }
      
+*::-webkit-scrollbar{
+   width: 5px;
+}
+*::-webkit-scrollbar-thumb{
+   background: #343a40;
+  border-radius: 5px;
+}
 </style>

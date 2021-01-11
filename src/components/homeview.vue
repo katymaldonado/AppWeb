@@ -9,7 +9,7 @@
      <div id="e-fst">
        <b-container class="bv-example-row" >
          <b-row>
-           <b-col cols="1" class="pl-0">
+           <b-col cols="1" sm= "12" class="pl-0">
              <div  id="st-1">
                <h6> 08/04</h6>
              </div></b-col>
@@ -17,22 +17,22 @@
          </b-row>
        </b-container>
      </div>        
-     <div>
+     <div id="e-fst">
           <b-container class="bv-example-row">
            <b-row>
-             <b-col cols="1" class="pl-0">
+             <b-col cols="1" sm= "12" class="pl-0">
                 <div id="st-1"><h6>08/16</h6></div></b-col>
-             <b-col cols="11" class="pt-1 pl-4"><p>Season Kick-off: Meet the Teams</p></b-col>
+             <b-col cols="11" sm="12" class="p-0 pt-2"><p>Season Kick-off: <br> Meet the Teams</p></b-col>
            </b-row>
          </b-container>
        </div>
            
-       <div>
+       <div id="other">
           <b-container class="bv-example-row">
            <b-row>
-             <b-col cols="1" class="pl-0 pt-1">
+             <b-col cols="1" sm= "12" class="pl-0 pt-1">
                <div id="st-1"><h6>09/01</h6></div></b-col>
-             <b-col cols="11" class="pl-3"><p>First Game of the Season (Check Game Schedule for details)</p></b-col>
+             <b-col cols="11" class="pl-3"><p>First Game of the Season (Check Game <a href="/calendar" >Shedule and Chatrooms</a>)</p></b-col>
            </b-row>
          </b-container>
          
@@ -109,18 +109,38 @@ export default {
       margin-bottom: 0;
       
   }
+  h6{
+    margin: 0 !important;
+  }
   @media only screen and (orientation: landscape){
      .home{
           height: 60vh;
      }
      .header{
-       height: 60vh;
+       height: 48vh;
      }
       
      .events{
-       margin-top: 10vh;
-       
+       margin-top: 4vh;
+       height: 30vh;
+       flex-direction: row;
      }
-     
+     .events > div{
+       width: 25vw;
+       height: 20vh;
+       padding-bottom: 5vh;
+     }
+     #e-fst{
+       margin-right: 2vw;
+     }
+     #other{
+       width: 40vw;
+     }
+     #st-1{
+       border-radius: 20px;
+       width: 100%;
+       height: 6vh;
+
+     }
    } 
 </style>

@@ -101,6 +101,7 @@ body{
    top: 9vh;
    background-color: #0000;
    margin-bottom: 8vh;
+   padding: 0;
 }
 
 
@@ -143,11 +144,11 @@ body{
    background-color: #0000;
    
 }
-.main-view::-webkit-scrollbar,.main-viewland::-webkit-scrollbar{
-  width: 7px;
-}
-.main-view::-webkit-scrollbar-thumb,.main-viewland::-webkit-scrollbar-thumb{
-  background: #343a40;
-  border-radius: 5px;
-}
+// .main-viewland::-webkit-scrollbar,.main-viewland::-webkit-scrollbar{
+//   width: 7px;
+// }
+// .main-viewland::-webkit-scrollbar-thumb,.main-viewland::-webkit-scrollbar-thumb{
+//   background: #343a40;
+//   border-radius: 5px;
+// }
 </style>

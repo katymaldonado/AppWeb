@@ -56,6 +56,11 @@ const routes = [
     path: '/chatall',
     name: 'ChatAll',
     component: () => import('../views/ChatAll.vue')
+  },
+  {
+    path: '/registrer',
+    name: 'Registrer',
+    component: () => import('../views/Registrer.vue')
   }
   // ,
   // {

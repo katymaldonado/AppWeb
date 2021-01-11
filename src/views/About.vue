@@ -32,11 +32,19 @@ export default {
      position: relative;
      color: grey;
      justify-content: center;
-     top: 5vh;
+     top: 6vh;
    }
    @media only screen and (orientation: landscape){
      .about{
-       height: 100vh;
+       height: 88vh;
      }
+     
+*::-webkit-scrollbar{
+   width: 5px;
+}
+*::-webkit-scrollbar-thumb{
+   background: #343a40;
+  border-radius: 5px;
+}
    }
 </style>
